@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeMow760 | Lawn Care Services in Ridgecrest, CA</title>
+  <meta name="description" content="Professional lawn mowing, edging, and shrub trimming services in Ridgecrest, CA. Serving the 760 area code. Get a free quote today.">
+  <meta name="keywords" content="lawn care, lawn mowing, edging, shrub trimming, Ridgecrest CA, 760, yard care">
+  <link rel="icon" type="image/png" href="./WEMOW_LOGO_transparent_BG.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            body: ['DM Sans', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#E6FFF2', 100: '#CCFFE6', 200: '#99FFCC', 300: '#66FFB3', 400: '#33FF99',
+              500: '#00BF66', 600: '#00994D', 700: '#007A3D', 800: '#005C2E', 900: '#003D1F',
+            },
+            accent: { 400: '#FFB347', 500: '#F5921B', 600: '#D97B0D' },
+            surface: { 50: '#FAFAF8', 100: '#F5F5F0', 200: '#EBEBDE' }
+          },
+          animation: {
+            'marquee': 'marquee 45s linear infinite',
+            'fade-in': 'fadeIn 0.6s ease-out forwards',
+            'fade-up': 'fadeUp 0.7s ease-out forwards',
+            'cta-pulse': 'ctaPulse 3s ease-in-out infinite',
+          },
+          keyframes: {
+            marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            fadeUp: { '0%': { opacity: '0', transform: 'translateY(24px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            ctaPulse: { '0%, 100%': { boxShadow: '0 0 0 0 rgba(0, 191, 102, 0.4)' }, '50%': { boxShadow: '0 0 0 12px rgba(0, 191, 102, 0)' } }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; } .reveal-delay-2 { transition-delay: 0.2s; } .reveal-delay-3 { transition-delay: 0.3s; }
+    #mobile-menu { transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s; transform-origin: top; }
+    #mobile-menu.menu-closed { opacity: 0; transform: scaleY(0.95) translateY(-8px); visibility: hidden; pointer-events: none; }
+    #mobile-menu.menu-open { opacity: 1; transform: scaleY(1) translateY(0); visibility: visible; pointer-events: auto; }
+    .grass-edge { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60'%3E%3Cpath d='M0,60 L0,45 C10,42 15,20 20,45 C25,42 30,15 35,42 C40,40 45,22 50,43 C55,41 60,18 65,44 C70,42 75,25 80,45 C85,43 90,20 95,44 C100,42 105,15 110,43 C115,41 120,22 125,45 C130,43 135,18 140,44 C145,42 150,25 155,45 C160,43 165,20 170,44 C175,42 180,15 185,43 C190,41 195,22 200,45 C205,43 210,18 215,44 C220,42 225,25 230,45 C235,43 240,20 245,44 C250,42 255,15 260,43 C265,41 270,22 275,45 C280,43 285,18 290,44 C295,42 300,25 305,45 C310,43 315,20 320,44 C325,42 330,15 335,43 C340,41 345,22 350,45 C355,43 360,18 365,44 C370,42 375,25 380,45 C385,43 390,20 395,44 C400,42 405,15 410,43 C415,41 420,22 425,45 C430,43 435,18 440,44 C445,42 450,25 455,45 C460,43 465,20 470,44 C475,42 480,15 485,43 C490,41 495,22 500,45 C505,43 510,18 515,44 C520,42 525,25 530,45 C535,43 540,20 545,44 C550,42 555,15 560,43 C565,41 570,22 575,45 C580,43 585,18 590,44 C595,42 600,25 605,45 C610,43 615,20 620,44 C625,42 630,15 635,43 C640,41 645,22 650,45 C655,43 660,18 665,44 C670,42 675,25 680,45 C685,43 690,20 695,44 C700,42 705,15 710,43 C715,41 720,22 725,45 C730,43 735,18 740,44 C745,42 750,25 755,45 C760,43 765,20 770,44 C775,42 780,15 785,43 C790,41 795,22 800,45 C805,43 810,18 815,44 C820,42 825,25 830,45 C835,43 840,20 845,44 C850,42 855,15 860,43 C865,41 870,22 875,45 C880,43 885,18 890,44 C895,42 900,25 905,45 C910,43 915,20 920,44 C925,42 930,15 935,43 C940,41 945,22 950,45 C955,43 960,18 965,44 C970,42 975,25 980,45 C985,43 990,20 995,44 C1000,42 1005,15 1010,43 C1015,41 1020,22 1025,45 C1030,43 1035,18 1040,44 C1045,42 1050,25 1055,45 C1060,43 1065,20 1070,44 C1075,42 1080,15 1085,43 C1090,41 1095,22 1100,45 C1105,43 1110,18 1115,44 C1120,42 1125,25 1130,45 C1135,43 1140,20 1145,44 C1150,42 1155,15 1160,43 C1165,41 1170,22 1175,45 C1180,43 1185,18 1190,44 C1195,42 1200,25 1200,45 L1200,60 Z' fill='%2300BF66' opacity='0.15'/%3E%3C/svg%3E"); background-size: cover; height: 60px; width: 100%; }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-item img { transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #f5f5f0; } ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; } ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+    ::selection { background: #00BF66; color: white; }
+  </style>
+</head>
+<body class="font-body text-gray-700 bg-white antialiased">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-xl border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-5 h-20 flex items-center justify-between">
+      <a href="#" class="flex-shrink-0 flex items-center gap-2">
+        <img src="./WEMOW_LOGO_transparent_BG.png" alt="WeMow760 Logo" class="h-14 w-auto">
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#services" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors">Services</a>
+        <a href="#gallery" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors">Our Work</a>
+        <a href="#about" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors">About</a>
+        <a href="#contact" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors">Contact</a>
+        <div class="flex items-center gap-4 ml-3">
+          <a href="tel:7603031827" class="flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-brand-600 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+            (760) 303-1827
+          </a>
+          <button onclick="openQuoteForm()" class="bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-all shadow-sm hover:shadow-md transform hover:-translate-y-0.5 active:translate-y-0 animate-cta-pulse">Get a Free Quote</button>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 md:hidden">
+        <a href="tel:7603031827" class="w-10 h-10 bg-brand-50 rounded-full flex items-center justify-center text-brand-600 border border-brand-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+        </a>
+        <button onclick="toggleMobileMenu()" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-brand-600">
+          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="5" x2="20" y2="5"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="19" x2="20" y2="19"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="menu-closed flex flex-col bg-white border-b border-gray-100 md:hidden absolute top-20 w-full left-0 shadow-xl z-40">
+      <div class="flex flex-col p-6 space-y-4">
+        <a href="#services" onclick="closeMobileMenu()" class="text-base font-medium text-gray-600 py-2 border-b border-gray-50">Services</a>
+        <a href="#gallery" onclick="closeMobileMenu()" class="text-base font-medium text-gray-600 py-2 border-b border-gray-50">Our Work</a>
+        <a href="#about" onclick="closeMobileMenu()" class="text-base font-medium text-gray-600 py-2 border-b border-gray-50">About</a>
+        <a href="#contact" onclick="closeMobileMenu()" class="text-base font-medium text-gray-600 py-2 border-b border-gray-50">Contact</a>
+        <button onclick="openQuoteForm(); closeMobileMenu()" class="w-full bg-brand-500 text-white text-base font-semibold py-3 rounded-lg shadow-sm">Get a Free Quote</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558904541-efa843a96f01?q=80&w=2832&auto=format&fit=crop')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-gray-900/70 via-gray-900/50 to-gray-900/80"></div>
+    <div class="relative z-10 w-full px-6 flex flex-col items-center justify-center pt-24 pb-16">
+      <div class="max-w-4xl w-full mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/15 border border-brand-400/25 backdrop-blur-md mb-8 animate-fade-in">
+          <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span>
+          <span class="text-brand-200 text-xs font-semibold tracking-widest uppercase">Serving Ridgecrest &amp; the 760</span>
+        </div>
+        <div class="flex justify-center mb-6 animate-fade-in" style="animation-delay: 0.1s;">
+          <img src="./WEMOW_LOGO_transparent_BG.png" alt="WeMow760" class="h-36 md:h-44 w-auto drop-shadow-2xl">
+        </div>
+        <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-900 text-white tracking-tighter leading-[0.9] mb-6 animate-fade-up" style="animation-delay: 0.2s;">Your Yard,<br><span class="text-brand-400">Our Priority.</span></h1>
+        <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-xl mx-auto leading-relaxed font-light animate-fade-up" style="animation-delay: 0.35s;">Professional lawn mowing, edging, and shrub trimming for Ridgecrest homeowners. Reliable service you can count on.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style="animation-delay: 0.5s;">
+          <button onclick="openQuoteForm()" class="w-full sm:w-auto bg-brand-500 hover:bg-brand-400 text-white text-lg font-semibold px-10 py-4 rounded-xl shadow-lg hover:shadow-brand-500/30 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0">Get Your Free Quote</button>
+          <a href="tel:7603031827" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/15 text-white text-lg font-medium px-10 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+            Call (760) 303-1827
+          </a>
+        </div>
+      </div>
+      <div class="mt-16 flex flex-wrap items-center justify-center gap-x-10 gap-y-5 animate-fade-in" style="animation-delay: 0.65s;">
+        <div class="flex items-center gap-3"><div class="bg-brand-500/20 p-2 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00BF66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div><span class="text-white/90 text-sm font-medium">Licensed &amp; Insured</span></div>
+        <div class="h-7 w-px bg-white/15 hidden sm:block"></div>
+        <div class="flex items-center gap-3"><div class="bg-brand-500/20 p-2 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00BF66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div><span class="text-white/90 text-sm font-medium">Ridgecrest Local</span></div>
+        <div class="h-7 w-px bg-white/15 hidden sm:block"></div>
+        <div class="flex items-center gap-3"><div class="bg-brand-500/20 p-2 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00BF66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2m16 0h2M12 8v8m-4-4h8"/></svg></div><span class="text-white/90 text-sm font-medium">Free Estimates</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="grass-edge -mt-1"></div>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-20 md:py-28 bg-surface-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <span class="inline-block text-brand-600 text-xs font-bold tracking-widest uppercase mb-3">What We Do</span>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-4">Lawn Care Services</h2>
+        <p class="text-lg text-gray-500 max-w-lg mx-auto font-light">Keeping Ridgecrest yards looking their best, one lawn at a time.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="reveal group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center">
+          <div class="w-16 h-16 bg-brand-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300 text-brand-600"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="8" rx="1"/><path d="M17 14v7m-10-7v7M7.5 14l1.5-4m5.5 4L13 10M2 10h20"/><circle cx="7" cy="21" r="1"/><circle cx="17" cy="21" r="1"/></svg></div>
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-3 tracking-tight">Lawn Mowing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">Regular mowing at the right height for a healthy, clean-cut lawn all season long.</p>
+          <button onclick="openQuoteForm('Lawn Mowing')" class="text-brand-600 text-sm font-semibold hover:text-brand-700 flex items-center gap-1 mx-auto transition-colors">Get a Quote <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></button>
+        </div>
+        <div class="reveal reveal-delay-1 group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center">
+          <div class="w-16 h-16 bg-brand-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300 text-brand-600"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-3 tracking-tight">Edging</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">Crisp, clean edges along sidewalks, driveways, and garden beds for a polished look.</p>
+          <button onclick="openQuoteForm('Edging')" class="text-brand-600 text-sm font-semibold hover:text-brand-700 flex items-center gap-1 mx-auto transition-colors">Get a Quote <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></button>
+        </div>
+        <div class="reveal reveal-delay-2 group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center">
+          <div class="w-16 h-16 bg-brand-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300 text-brand-600"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><path d="M8 6a4 4 0 0 1 8 0"/><path d="m9 3 3 3 3-3"/></svg></div>
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-3 tracking-tight">Shrub Trimming</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">Shape up overgrown hedges and shrubs to keep your property looking neat and tidy.</p>
+          <button onclick="openQuoteForm('Shrub Trimming')" class="text-brand-600 text-sm font-semibold hover:text-brand-700 flex items-center gap-1 mx-auto transition-colors">Get a Quote <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+  <section id="gallery" class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <span class="inline-block text-brand-600 text-xs font-bold tracking-widest uppercase mb-3">Our Work</span>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-4">Yards We've Transformed</h2>
+        <p class="text-lg text-gray-500 max-w-lg mx-auto font-light">Real results from real Ridgecrest properties.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 reveal">
+        <div class="gallery-item rounded-xl overflow-hidden aspect-[4/3]"><img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?q=80&w=1200&auto=format&fit=crop" alt="Freshly mowed lawn" class="w-full h-full object-cover"></div>
+        <div class="gallery-item rounded-xl overflow-hidden aspect-[4/3]"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" alt="Beautiful home with lawn" class="w-full h-full object-cover"></div>
+        <div class="gallery-item rounded-xl overflow-hidden aspect-[4/3] md:row-span-2"><img src="https://images.unsplash.com/photo-1605117882932-f9e32b03fea9?q=80&w=1200&auto=format&fit=crop" alt="Manicured garden" class="w-full h-full object-cover"></div>
+        <div class="gallery-item rounded-xl overflow-hidden aspect-[4/3] col-span-2"><img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?q=80&w=1600&auto=format&fit=crop" alt="Lawn care in progress" class="w-full h-full object-cover"></div>
+      </div>
+      <div class="text-center mt-8 reveal"><p class="text-sm text-gray-400 italic">Photos are representative. We'll update with Thomas's actual Ridgecrest work soon!</p></div>
+    </div>
+  </section>
+
+  <!-- REVIEWS CAROUSEL -->
+  <section class="py-14 bg-surface-50 border-y border-gray-100 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 border-2 border-white z-10"><span class="font-bold text-sm">5.0</span></div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2"><span class="font-bold text-gray-900 font-display">Excellent</span><div class="flex text-yellow-400"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div></div>
+          <span class="text-xs text-gray-500 font-medium">Based on local reviews</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-1.5 text-sm text-gray-500 font-medium bg-white px-3 py-1.5 rounded-full border border-gray-100"><svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-gray-800"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81z"/></svg>Rated on Google</div>
+    </div>
+    <div class="relative w-full">
+      <div class="absolute left-0 top-0 bottom-0 w-10 sm:w-24 bg-gradient-to-r from-surface-50 to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-10 sm:w-24 bg-gradient-to-l from-surface-50 to-transparent z-10 pointer-events-none"></div>
+      <div class="flex animate-marquee hover:[animation-play-state:paused] w-max">
+        <div class="flex items-center">
+          <div class="w-80 flex-shrink-0 p-5 bg-white border border-gray-100 rounded-xl mx-3 hover:shadow-md transition-all duration-300"><div class="flex gap-0.5 mb-3 text-yellow-400"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div><p class="text-gray-700 text-sm mb-4 leading-relaxed">"Thomas does a great job on our lawn every week. Always on time and the yard looks perfect."</p><div class="flex items-center justify-between"><span class="font-bold text-gray-900 text-xs uppercase tracking-wide">Mike R.</span><span class="text-[10px] text-gray-400 uppercase">Ridgecrest</span></div></div>
+          <div class="w-80 flex-shrink-0 p-5 bg-white border border-gray-100 rounded-xl mx-3 hover:shadow-md transition-all duration-300"><div class="flex gap-0.5 mb-3 text-yellow-400"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div><p class="text-gray-700 text-sm mb-4 leading-relaxed">"Finally found a reliable lawn guy in Ridgecrest. Excellent edging work and fair prices."</p><div class="flex items-center justify-between"><span class="font-bold text-gray-900 text-xs uppercase tracking-wide">Jennifer S.</span><span class="text-[10px] text-gray-400 uppercase">Ridgecrest</span></div></div>
+          <div class="w-80 flex-shrink-0 p-5 bg-white border border-gray-100 rounded-xl mx-3 hover:shadow-md transition-all duration-300"><div class="flex gap-0.5 mb-3 text-yellow-400"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div><p class="text-gray-700 text-sm mb-4 leading-relaxed">"Our shrubs were totally overgrown. WeMow cleaned them up beautifully. Neighbors already asked who did it!"</p><div class="flex items-center justify-between"><span class="font-bold text-gray-900 text-xs uppercase tracking-wide">David &amp; Lisa T.</span><span class="text-[10px] text-gray-400 uppercase">Ridgecrest</span></div></div>
+          <div class="w-80 flex-shrink-0 p-5 bg-white border border-gray-100 rounded-xl mx-3 hover:shadow-md transition-all duration-300"><div class="flex gap-0.5 mb-3 text-yellow-400"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div><p class="text-gray-700 text-sm mb-4 leading-relaxed">"Great service. I work on base and don't have time for yard work. Thomas handles everything."</p><div class="flex items-center justify-between"><span class="font-bold text-gray-900 text-xs uppercase tracking-wide">Chris P.</span><span class="text-[10px] text-gray-400 uppercase">Ridgecrest</span></div></div>
+          <div class="w-80 flex-shrink-0 p-5 bg-white border border-gray-100 rounded-xl mx-3 hover:shadow-md transition-all duration-300"><div class="flex gap-0.5 mb-3 text-yellow-400"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div><p class="text-gray-700 text-sm mb-4 leading-relaxed">"Set up recurring weekly mowing. Yard has never looked better. Very responsive to texts too."</p><div class="flex items-center justify-between"><span class="font-bold text-gray-900 text-xs uppercase tracking-wide">Amanda W.</span><span class="text-[10px] text-gray-400 uppercase">Ridgecrest</span></div></div>
+        </div>
+        <div class="flex items-center" aria-hidden="true">
+          <div class="w-80 flex-shrink-0 p-5 bg-white border border-gray-100 rounded-xl mx-3"><div class="flex gap-0.5 mb-3 text-yellow-400"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div><p class="text-gray-700 text-sm mb-4 leading-relaxed">"Thomas does a great job on our lawn every week. Always on time and the yard looks perfect."</p><div class="flex items-center justify-between"><span class="font-bold text-gray-900 text-xs uppercase tracking-wide">Mike R.</span><span class="text-[10px] text-gray-400 uppercase">Ridgecrest</span></div></div>
+          <div class="w-80 flex-shrink-0 p-5 bg-white border border-gray-100 rounded-xl mx-3"><div class="flex gap-0.5 mb-3 text-yellow-400"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div><p class="text-gray-700 text-sm mb-4 leading-relaxed">"Finally found a reliable lawn guy in Ridgecrest. Excellent edging work and fair prices."</p><div class="flex items-center justify-between"><span class="font-bold text-gray-900 text-xs uppercase tracking-wide">Jennifer S.</span><span class="text-[10px] text-gray-400 uppercase">Ridgecrest</span></div></div>
+          <div class="w-80 flex-shrink-0 p-5 bg-white border border-gray-100 rounded-xl mx-3"><div class="flex gap-0.5 mb-3 text-yellow-400"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div><p class="text-gray-700 text-sm mb-4 leading-relaxed">"Our shrubs were totally overgrown. WeMow cleaned them up beautifully. Neighbors already asked who did it!"</p><div class="flex items-center justify-between"><span class="font-bold text-gray-900 text-xs uppercase tracking-wide">David &amp; Lisa T.</span><span class="text-[10px] text-gray-400 uppercase">Ridgecrest</span></div></div>
+          <div class="w-80 flex-shrink-0 p-5 bg-white border border-gray-100 rounded-xl mx-3"><div class="flex gap-0.5 mb-3 text-yellow-400"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div><p class="text-gray-700 text-sm mb-4 leading-relaxed">"Great service. I work on base and don't have time for yard work. Thomas handles everything."</p><div class="flex items-center justify-between"><span class="font-bold text-gray-900 text-xs uppercase tracking-wide">Chris P.</span><span class="text-[10px] text-gray-400 uppercase">Ridgecrest</span></div></div>
+          <div class="w-80 flex-shrink-0 p-5 bg-white border border-gray-100 rounded-xl mx-3"><div class="flex gap-0.5 mb-3 text-yellow-400"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div><p class="text-gray-700 text-sm mb-4 leading-relaxed">"Set up recurring weekly mowing. Yard has never looked better. Very responsive to texts too."</p><div class="flex items-center justify-between"><span class="font-bold text-gray-900 text-xs uppercase tracking-wide">Amanda W.</span><span class="text-[10px] text-gray-400 uppercase">Ridgecrest</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / TRUST -->
+  <section id="about" class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+        <div class="reveal">
+          <span class="inline-block text-brand-600 text-xs font-bold tracking-widest uppercase mb-3">About WeMow760</span>
+          <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-6">Your Local Ridgecrest<br>Yard Care Pro</h2>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed font-light">WeMow760 is owner-operated by Thomas right here in Ridgecrest. That means you deal directly with the person doing the work — no middlemen, no runaround. Just honest, reliable lawn care for your home.</p>
+          <p class="text-base text-gray-500 mb-8 leading-relaxed">Whether you're a busy family, work on base at China Lake, or just want your weekends back — we've got you covered with consistent, quality service at fair prices.</p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3"><div class="w-6 h-6 rounded-full bg-brand-500 flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="text-gray-700 font-medium">Owner-operated — Thomas is on every job</span></div>
+            <div class="flex items-center gap-3"><div class="w-6 h-6 rounded-full bg-brand-500 flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="text-gray-700 font-medium">Serving Ridgecrest &amp; the 760 area</span></div>
+            <div class="flex items-center gap-3"><div class="w-6 h-6 rounded-full bg-brand-500 flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="text-gray-700 font-medium">Recurring &amp; one-time service available</span></div>
+            <div class="flex items-center gap-3"><div class="w-6 h-6 rounded-full bg-brand-500 flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="text-gray-700 font-medium">Free quotes — no pressure, no obligation</span></div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <div class="bg-surface-50 p-8 md:p-10 rounded-2xl border border-gray-100 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#00BF66" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mb-4 opacity-40"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+            <div class="flex text-yellow-400 mb-5 gap-0.5"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+            <p class="text-gray-800 text-lg leading-relaxed mb-8 italic font-light">"Thomas has been mowing our lawn for months now and it's been great. He's dependable, does quality work, and his pricing is very reasonable. We're on a recurring schedule and our yard has never looked better. Highly recommend to anyone in Ridgecrest."</p>
+            <div><div class="font-display font-bold text-gray-900">Rachel &amp; Mark D.</div><div class="text-xs text-gray-500 uppercase tracking-widest mt-0.5">Ridgecrest Homeowner</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section id="contact" class="py-20 md:py-28 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gray-900"></div>
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-900/80 to-gray-900/90"></div>
+    <div class="max-w-3xl mx-auto px-6 relative z-10 text-center reveal">
+      <span class="inline-block text-brand-400 text-xs font-bold tracking-widest uppercase mb-4">Ready to get started?</span>
+      <h2 class="font-display text-4xl md:text-6xl font-bold text-white tracking-tight mb-6">Your Best Yard<br>Is One Call Away.</h2>
+      <p class="text-xl text-gray-300 mb-10 font-light max-w-lg mx-auto">Free quotes. Reliable results. A yard you'll actually want to spend time in.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button onclick="openQuoteForm()" class="bg-brand-500 hover:bg-brand-400 text-white text-lg font-semibold px-10 py-4 rounded-xl shadow-lg hover:shadow-brand-500/30 transition-all duration-300 hover:-translate-y-0.5">Request Your Free Quote</button>
+        <a href="tel:7603031827" class="bg-white/10 text-white border border-white/20 hover:bg-white/20 text-lg font-medium px-10 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+          Call Thomas
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 pt-16 pb-8 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div>
+          <div class="flex items-center gap-3 mb-5"><img src="./WEMOW_LOGO_transparent_BG.png" alt="WeMow760" class="h-12 w-auto"></div>
+          <p class="text-gray-400 leading-relaxed text-sm max-w-xs mb-4">Professional lawn mowing, edging, and shrub trimming for Ridgecrest, CA. Keeping your yard looking its best.</p>
+          <a href="https://www.instagram.com/WeMow760" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-gray-400 hover:text-brand-400 text-sm transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@WeMow760</a>
+        </div>
+        <div>
+          <h3 class="text-sm font-display font-bold uppercase tracking-widest text-white mb-5">Services</h3>
+          <ul class="space-y-3 text-sm"><li><a href="#services" class="text-gray-400 hover:text-brand-400 transition-colors">Lawn Mowing</a></li><li><a href="#services" class="text-gray-400 hover:text-brand-400 transition-colors">Edging</a></li><li><a href="#services" class="text-gray-400 hover:text-brand-400 transition-colors">Shrub Trimming</a></li><li><button onclick="openQuoteForm('Multiple Services')" class="text-gray-400 hover:text-brand-400 transition-colors">Multiple Services</button></li></ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-display font-bold uppercase tracking-widest text-white mb-5">Contact</h3>
+          <ul class="space-y-4 text-sm">
+            <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500 mt-0.5"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg><a href="tel:7603031827" class="text-gray-400 hover:text-brand-400 transition-colors">(760) 303-1827</a></li>
+            <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500 mt-0.5"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:info@wemow760.com" class="text-gray-400 hover:text-brand-400 transition-colors">info@wemow760.com</a></li>
+            <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500 mt-0.5"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg><span class="text-gray-400">Ridgecrest, CA 93555</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-500 text-xs">&copy; 2026 WeMow760 — Yard Care Services. All rights reserved.</p>
+        <p class="text-gray-600 text-xs">Serving Ridgecrest &amp; the 760 area code</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- QUOTE MODAL -->
+  <div id="quote-modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4">
+    <div class="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" onclick="closeQuoteForm()"></div>
+    <div class="bg-white rounded-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto relative z-10 shadow-2xl animate-fade-up ring-1 ring-gray-200">
+      <div class="p-7 md:p-8">
+        <div class="flex items-center justify-between mb-6">
+          <div><h3 class="font-display text-2xl font-bold text-gray-900 tracking-tight">Get a Free Quote</h3><p class="text-sm text-gray-500 mt-1">Tell us about your yard. We'll get back to you fast.</p></div>
+          <button onclick="closeQuoteForm()" class="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-400 hover:text-gray-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+        </div>
+        <form onsubmit="handleQuoteSubmit(event)" class="space-y-5">
+          <div class="space-y-1.5"><label class="block text-xs font-bold uppercase tracking-widest text-gray-600">Name *</label><input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all text-sm placeholder-gray-400 hover:border-gray-300" placeholder="Your name"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="space-y-1.5"><label class="block text-xs font-bold uppercase tracking-widest text-gray-600">Phone *</label><input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all text-sm placeholder-gray-400 hover:border-gray-300" placeholder="(760) 555-1234"></div>
+            <div class="space-y-1.5"><label class="block text-xs font-bold uppercase tracking-widest text-gray-600">Property Address</label><input type="text" name="address" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all text-sm placeholder-gray-400 hover:border-gray-300" placeholder="Address or neighborhood"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="space-y-1.5"><label class="block text-xs font-bold uppercase tracking-widest text-gray-600">Service Needed</label><select id="service-select" name="service" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all text-sm bg-white hover:border-gray-300 text-gray-700"><option value="">Select a service...</option><option value="Lawn Mowing">Lawn Mowing</option><option value="Edging">Edging</option><option value="Shrub Trimming">Shrub Trimming</option><option value="Multiple Services">Multiple Services</option><option value="Other">Other</option></select></div>
+            <div class="space-y-1.5"><label class="block text-xs font-bold uppercase tracking-widest text-gray-600">Urgency</label><select name="urgency" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all text-sm bg-white hover:border-gray-300 text-gray-700"><option value="Just getting quotes">Just getting quotes</option><option value="ASAP">ASAP</option><option value="Within a week">Within a week</option><option value="Recurring service inquiry">Recurring service inquiry</option></select></div>
+          </div>
+          <div class="space-y-1.5"><label class="block text-xs font-bold uppercase tracking-widest text-gray-600">Details</label><textarea name="details" rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all text-sm resize-none placeholder-gray-400 hover:border-gray-300" placeholder="Any specific areas of concern? Yard size? Special requests?"></textarea></div>
+          <div class="space-y-1.5"><label class="block text-xs font-bold uppercase tracking-widest text-gray-600">Upload Photo (Optional)</label><input type="file" name="photo" accept="image/*" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all text-sm bg-white hover:border-gray-300 text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-700 hover:file:bg-brand-100"></div>
+          <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3.5 rounded-lg transition-all shadow-md mt-2 flex items-center justify-center gap-2 transform active:scale-[0.98]">Send Quote Request</button>
+          <p class="text-xs text-center text-gray-400 mt-3">We'll get back to you within 24 hours. No spam, ever.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openQuoteForm(serviceType = '') { const modal = document.getElementById('quote-modal'); const select = document.getElementById('service-select'); if (serviceType) select.value = serviceType; modal.classList.remove('hidden'); modal.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+    function closeQuoteForm() { const modal = document.getElementById('quote-modal'); modal.classList.add('hidden'); modal.classList.remove('flex'); document.body.style.overflow = ''; }
+    function handleQuoteSubmit(event) { event.preventDefault(); const btn = event.target.querySelector('button[type="submit"]'); const originalText = btn.innerText; btn.disabled = true; btn.innerText = 'Sending...'; btn.classList.add('opacity-80'); setTimeout(() => { btn.innerText = '✓ Sent Successfully!'; btn.classList.remove('bg-brand-500', 'opacity-80'); btn.classList.add('bg-green-600'); setTimeout(() => { closeQuoteForm(); event.target.reset(); btn.disabled = false; btn.innerText = originalText; btn.classList.add('bg-brand-500'); btn.classList.remove('bg-green-600'); }, 1500); }, 800); }
+    function toggleMobileMenu() { const menu = document.getElementById('mobile-menu'); menu.classList.toggle('menu-closed'); menu.classList.toggle('menu-open'); }
+    function closeMobileMenu() { const menu = document.getElementById('mobile-menu'); menu.classList.add('menu-closed'); menu.classList.remove('menu-open'); }
+    document.addEventListener('DOMContentLoaded', () => { const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); }, { threshold: 0.1 }); document.querySelectorAll('.reveal').forEach(el => observer.observe(el)); window.addEventListener('scroll', () => { const nav = document.getElementById('navbar'); if (window.scrollY > 40) { nav.classList.add('shadow-md'); } else { nav.classList.remove('shadow-md'); } }); document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeQuoteForm(); }); });
+  </script>
+</body>
+</html>

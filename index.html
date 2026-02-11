@@ -183,12 +183,12 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 .service-icon {
-  width: 80px; height: 80px;
+  width: 110px; height: 110px;
   margin: 0 auto 20px;
   display: flex; align-items: center; justify-content: center;
 }
 .service-icon svg {
-  width: 64px; height: 64px;
+  width: 88px; height: 88px;
   stroke: var(--green); stroke-width: 1.5;
   fill: none;
 }
@@ -650,19 +650,19 @@ h1, h2, h3, h4, h5, h6 {
 <section class="gallery" id="gallery">
     <div class="gallery-grid reveal">
       <div class="g-item">
-        <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=800&q=80" alt="Freshly mowed lawn">
+        <img src="gallery3.jpg" alt="WeMow760 freshly mowed lawn">
       </div>
       <div class="g-item">
-        <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?w=600&q=80" alt="Clean edging work">
+        <img src="gallery4.jpg" alt="WeMow760 lawn with stone border">
       </div>
       <div class="g-item">
-        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Trimmed hedges">
+        <img src="gallery2.jpg" alt="WeMow760 trimmed shrubs">
       </div>
       <div class="g-item">
-        <img src="https://images.unsplash.com/photo-1589923188651-268a9765e432?w=600&q=80" alt="Maintained property">
+        <img src="gallery1.jpg" alt="WeMow760 front yard landscaping">
       </div>
       <div class="g-item">
-        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Yard care results">
+        <img src="gallery5.jpg" alt="WeMow760 backyard cleanup">
       </div>
     </div>
 </section>
@@ -675,12 +675,17 @@ h1, h2, h3, h4, h5, h6 {
     <div class="services-grid">
       <div class="service-item reveal">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22V8"/>
-            <path d="M5 12H2a10 10 0 0 0 10-10 10 10 0 0 0 10 10h-3"/>
-            <path d="M8 22h8"/>
-            <path d="M7 15c1.5 0 3-1 3-3"/>
-            <path d="M17 15c-1.5 0-3-1-3-3"/>
+          <svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Flower pot -->
+            <path d="M22 42l4 16h12l4-16" stroke-width="2.5"/>
+            <path d="M18 42h28" stroke-width="2.5"/>
+            <!-- Stem -->
+            <path d="M32 42V24" stroke-width="2.5"/>
+            <!-- Leaves -->
+            <path d="M32 34c-8-2-10-8-6-12s10-2 6 4" stroke-width="2.5"/>
+            <path d="M32 28c8-2 10-8 6-12s-10-2-6 4" stroke-width="2.5"/>
+            <!-- Small leaf -->
+            <path d="M32 38c-5 0-7-4-4-7s7 0 4 3" stroke-width="2"/>
           </svg>
         </div>
         <h3>Landscaping</h3>
@@ -688,13 +693,22 @@ h1, h2, h3, h4, h5, h6 {
       </div>
       <div class="service-item reveal">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="6" width="20" height="12" rx="2"/>
-            <path d="M12 12h.01"/>
-            <path d="M2 12h2"/>
-            <path d="M20 12h2"/>
-            <path d="M6 18v2"/>
-            <path d="M18 18v2"/>
+          <svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Handle -->
+            <path d="M48 12v16h-4" stroke-width="3"/>
+            <path d="M45 12h6" stroke-width="3"/>
+            <!-- Mower deck -->
+            <rect x="8" y="28" width="36" height="14" rx="3" stroke-width="2.5"/>
+            <!-- Engine bump -->
+            <rect x="28" y="22" width="12" height="6" rx="2" stroke-width="2.5"/>
+            <!-- Wheels -->
+            <circle cx="14" cy="48" r="5" stroke-width="2.5"/>
+            <circle cx="38" cy="48" r="5" stroke-width="2.5"/>
+            <!-- Wheel dots -->
+            <circle cx="14" cy="48" r="1.5" fill="currentColor" stroke-width="0"/>
+            <circle cx="38" cy="48" r="1.5" fill="currentColor" stroke-width="0"/>
+            <!-- Ground -->
+            <path d="M4 56h56" stroke-width="2" stroke-dasharray="4 4"/>
           </svg>
         </div>
         <h3>Lawn Mowing</h3>
@@ -702,10 +716,23 @@ h1, h2, h3, h4, h5, h6 {
       </div>
       <div class="service-item reveal">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-            <path d="M2 17l10 5 10-5"/>
-            <path d="M2 12l10 5 10-5"/>
+          <svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Clean edge - the result -->
+            <path d="M4 52h56" stroke-width="2.5"/>
+            <!-- Grass side (left) -->
+            <path d="M8 52v-6" stroke-width="2"/>
+            <path d="M12 52v-8" stroke-width="2"/>
+            <path d="M16 52v-5" stroke-width="2"/>
+            <path d="M20 52v-7" stroke-width="2"/>
+            <path d="M24 52v-5" stroke-width="2"/>
+            <path d="M28 52v-6" stroke-width="2"/>
+            <!-- Sidewalk side (right, clean) -->
+            <rect x="34" y="44" width="24" height="8" rx="1" stroke-width="2" stroke-dasharray="0"/>
+            <!-- Edging tool (half-moon edger) -->
+            <path d="M32 8v28" stroke-width="3"/>
+            <path d="M28 8h8" stroke-width="3"/>
+            <!-- Blade -->
+            <path d="M24 40a8 8 0 0 1 16 0" stroke-width="2.5"/>
           </svg>
         </div>
         <h3>Edging</h3>
@@ -713,9 +740,19 @@ h1, h2, h3, h4, h5, h6 {
       </div>
       <div class="service-item reveal">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3c-1.2 0-2.4.6-3 1.7A3.6 3.6 0 0 0 4.6 9c-1 .6-1.7 1.8-1.7 3s.7 2.4 1.7 3c-.3 1.5.2 3 1.5 3.8a3.6 3.6 0 0 0 4.9 1.5c.6 1 1.8 1.7 3 1.7s2.4-.6 3-1.7a3.6 3.6 0 0 0 4.4-1.5c1.2-.8 1.7-2.3 1.5-3.8 1-.6 1.7-1.8 1.7-3s-.7-2.4-1.7-3c.3-1.5-.2-3-1.5-3.8A3.6 3.6 0 0 0 15 4.7c-.6-1-1.8-1.7-3-1.7z"/>
-            <path d="m9 12 2 2 4-4"/>
+          <svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Scissors/shears -->
+            <path d="M8 8l22 18" stroke-width="3"/>
+            <path d="M56 8L34 26" stroke-width="3"/>
+            <!-- Finger holes -->
+            <circle cx="6" cy="6" r="4" stroke-width="2.5"/>
+            <circle cx="58" cy="6" r="4" stroke-width="2.5"/>
+            <!-- Pivot -->
+            <circle cx="32" cy="22" r="3" stroke-width="2.5"/>
+            <!-- Rounded hedge -->
+            <path d="M10 58 Q10 34 32 34 Q54 34 54 58" stroke-width="2.5"/>
+            <!-- Ground -->
+            <path d="M8 58h48" stroke-width="2.5"/>
           </svg>
         </div>
         <h3>Shrub Trimming</h3>

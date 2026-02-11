@@ -170,7 +170,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ─── SERVICES ─── */
-.services { padding: 80px 0; background: var(--cream); }
+.services { padding: 80px 0; background: var(--white); }
 .services-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -215,7 +215,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-header p { color: var(--text-light); font-size: 1.05rem; max-width: 540px; margin: 0 auto; }
 
 /* ─── GALLERY ─── */
-.gallery { padding: 12px; background: var(--cream); }
+.gallery { padding: 12px; background: var(--white); }
 .gallery-grid {
   display: grid;
   grid-template-columns: 5fr 2fr 2fr 3fr;
@@ -304,16 +304,17 @@ h1, h2, h3, h4, h5, h6 {
 .review-source { font-size: 0.8rem; color: var(--text-light); }
 
 /* ─── ABOUT ─── */
-.about { padding: 80px 0; background: var(--cream); }
+.about { padding: 0; background: var(--cream); }
 .about-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 60px; align-items: center;
+  display: grid; grid-template-columns: 2fr 3fr;
+  gap: 0; align-items: stretch;
+  max-height: 480px;
 }
 .about-image {
-  border-radius: var(--radius); overflow: hidden;
-  aspect-ratio: 4/3;
+  overflow: hidden;
 }
-.about-image img { width: 100%; height: 100%; object-fit: cover; }
+.about-image img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.about-content { padding: 60px 80px; display: flex; flex-direction: column; justify-content: center; }
 .about-content .section-label { margin-bottom: 16px; }
 .about-content h2 {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
@@ -339,28 +340,24 @@ h1, h2, h3, h4, h5, h6 {
 /* ─── CTA SECTION ─── */
 .cta-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-light) 50%, var(--green-deeper) 100%);
+  background: var(--white);
   text-align: center;
   position: relative; overflow: hidden;
 }
-.cta-section::before {
-  content: ''; position: absolute; inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300BF66' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
 .cta-section h2 {
   font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 700; color: var(--white);
+  font-weight: 700; color: var(--text);
   margin-bottom: 16px; position: relative;
 }
 .cta-section p {
-  color: rgba(255,255,255,0.7); font-size: 1.1rem;
+  color: var(--text-light); font-size: 1.1rem;
   margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto;
   position: relative;
 }
 .cta-section .btn { position: relative; }
 .cta-phone {
   display: block; margin-top: 20px;
-  color: rgba(255,255,255,0.5); font-size: 0.95rem;
+  color: var(--text-light); font-size: 0.95rem;
   position: relative;
 }
 .cta-phone a { color: var(--green); text-decoration: none; font-weight: 600; }
@@ -487,7 +484,9 @@ h1, h2, h3, h4, h5, h6 {
   .gallery-grid .g-item:nth-child(3) { grid-column: 2; grid-row: 2; }
   .gallery-grid .g-item:nth-child(4) { grid-column: 1; grid-row: 3; }
   .gallery-grid .g-item:nth-child(5) { grid-column: 2; grid-row: 3; }
-  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-grid { grid-template-columns: 1fr; gap: 0; max-height: none; }
+  .about-content { padding: 40px 24px; }
+  .about-image { max-height: 350px; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
   .form-row { grid-template-columns: 1fr; }
   .review-card { width: 290px; }
@@ -763,14 +762,12 @@ h1, h2, h3, h4, h5, h6 {
 
 <!-- ABOUT -->
 <section class="about" id="about">
-  <div class="container">
     <div class="about-grid">
       <div class="about-image reveal">
-        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="WeMow760 at work">
+        <img src="about.jpg" alt="Thomas and family - WeMow760 owners">
       </div>
       <div class="about-content reveal">
-        <span class="section-label">About WeMow760</span>
-        <h2>Locally Owned. Ridgecrest Proud.</h2>
+        <h2>Locally Owned, Family Operated.</h2>
         <p>WeMow760 is owned and operated by Thomas right here in Ridgecrest. No big corporate crews — just quality, hands-on care from someone who lives in the community and takes pride in every yard.</p>
         <p>Whether you need a one-time cleanup or regular service, we make it simple: tell us what you need, we'll show up on time and get it done right.</p>
         <div class="trust-badges">
@@ -789,7 +786,6 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
     </div>
-  </div>
 </section>
 
 <!-- CTA -->

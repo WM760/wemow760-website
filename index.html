@@ -66,10 +66,10 @@ h1, h2, h3, h4, h5, h6 {
   display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo img {
-  height: 56px; width: auto;
+  height: 80px; width: auto;
   transition: height 0.3s ease;
 }
-.navbar.scrolled .nav-logo img { height: 44px; }
+.navbar.scrolled .nav-logo img { height: 80px; }
 .nav-links { display: flex; align-items: center; gap: 32px; }
 .nav-links a {
   font-family: 'Oswald', sans-serif;
@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero::after {
   content: ''; position: absolute; bottom: 0; left: 0; right: 0;
   height: 55%;
-  background: linear-gradient(to top, var(--white) 0%, rgba(255,255,255,0.7) 15%, rgba(255,255,255,0.4) 30%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.05) 70%, transparent 100%);
+  background: linear-gradient(to top, var(--white) 0%, rgba(255,255,255,0.5) 15%, rgba(255,255,255,0.25) 30%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.02) 70%, transparent 100%);
 }
 .hero-content { position: relative; z-index: 2; max-width: 680px; text-align: center; }
 .hero-badge {
@@ -170,7 +170,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ─── SERVICES ─── */
-.services { padding: 100px 0 80px; background: var(--white); }
+.services { padding: 80px 0; background: var(--cream); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.service-item {
+  text-align: center;
+}
+.service-icon {
+  width: 80px; height: 80px;
+  margin: 0 auto 20px;
+  display: flex; align-items: center; justify-content: center;
+}
+.service-icon svg {
+  width: 64px; height: 64px;
+  stroke: var(--green); stroke-width: 1.5;
+  fill: none;
+}
+.service-item h3 {
+  font-size: 1.1rem; font-weight: 700; margin-bottom: 10px;
+  letter-spacing: 0.1em; color: var(--charcoal);
+}
+.service-item p { color: var(--charcoal); font-size: 0.95rem; line-height: 1.6; }
+
 .section-header { text-align: center; margin-bottom: 60px; }
 .section-label {
   display: inline-block;
@@ -187,68 +214,38 @@ h1, h2, h3, h4, h5, h6 {
 }
 .section-header p { color: var(--text-light); font-size: 1.05rem; max-width: 540px; margin: 0 auto; }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-}
-.service-card {
-  background: var(--cream);
-  border-radius: var(--radius);
-  padding: 40px 32px;
-  text-align: center;
-  transition: all 0.35s ease;
-  border: 2px solid transparent;
-  position: relative; overflow: hidden;
-}
-.service-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0;
-  height: 4px; background: var(--green);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform 0.35s ease;
-}
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--green-light);
-}
-.service-card:hover::before { transform: scaleX(1); }
-.service-icon {
-  width: 72px; height: 72px;
-  background: var(--green-light);
-  border-radius: 20px;
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 20px;
-  font-size: 32px;
-  transition: all 0.35s ease;
-}
-.service-card:hover .service-icon {
-  background: var(--green);
-  transform: scale(1.05);
-}
-.service-card:hover .service-icon svg { stroke: white; }
-.service-icon svg {
-  width: 32px; height: 32px;
-  stroke: var(--green-dark); stroke-width: 2;
-  fill: none; transition: stroke 0.35s;
-}
-.service-card h3 {
-  font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;
-}
-.service-card p { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
-
 /* ─── GALLERY ─── */
-.gallery { padding: 80px 0; background: var(--cream); }
+.gallery { padding: 12px; background: var(--cream); }
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 220px);
-  gap: 16px;
+  grid-template-columns: 5fr 2fr 2fr 3fr;
+  grid-template-rows: 450px 450px;
+  gap: 12px;
 }
 .gallery-grid .g-item {
-  border-radius: var(--radius);
+  border-radius: 0;
   overflow: hidden; position: relative;
   cursor: pointer;
+}
+.gallery-grid .g-item:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+.gallery-grid .g-item:nth-child(2) {
+  grid-column: 2 / 4;
+  grid-row: 1;
+}
+.gallery-grid .g-item:nth-child(3) {
+  grid-column: 4;
+  grid-row: 1;
+}
+.gallery-grid .g-item:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+.gallery-grid .g-item:nth-child(5) {
+  grid-column: 3 / 5;
+  grid-row: 2;
 }
 .gallery-grid .g-item img {
   width: 100%; height: 100%;
@@ -256,9 +253,6 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform 0.5s ease;
 }
 .gallery-grid .g-item:hover img { transform: scale(1.05); }
-.gallery-grid .g-item:first-child {
-  grid-row: 1 / 3;
-}
 .gallery-grid .g-item::after {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.3), transparent 50%);
@@ -277,7 +271,7 @@ h1, h2, h3, h4, h5, h6 {
 .reviews-track-wrapper::after { right: 0; background: linear-gradient(to left, var(--white), transparent); }
 .reviews-track {
   display: flex; gap: 24px;
-  animation: scroll-reviews 30s linear infinite;
+  animation: scroll-reviews 60s linear infinite;
   width: max-content;
 }
 .reviews-track:hover { animation-play-state: paused; }
@@ -485,9 +479,14 @@ h1, h2, h3, h4, h5, h6 {
   .hero-buttons { flex-direction: column; }
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+    gap: 4px;
   }
-  .gallery-grid .g-item:first-child { grid-row: auto; }
+  .gallery-grid .g-item:nth-child(1) { grid-column: 1 / 3; grid-row: 1; }
+  .gallery-grid .g-item:nth-child(2) { grid-column: 1; grid-row: 2; }
+  .gallery-grid .g-item:nth-child(3) { grid-column: 2; grid-row: 2; }
+  .gallery-grid .g-item:nth-child(4) { grid-column: 1; grid-row: 3; }
+  .gallery-grid .g-item:nth-child(5) { grid-column: 2; grid-row: 3; }
   .about-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
   .form-row { grid-template-columns: 1fr; }
@@ -508,10 +507,6 @@ h1, h2, h3, h4, h5, h6 {
       <a href="#gallery">Our Work</a>
       <a href="#reviews">Reviews</a>
       <a href="#about">About</a>
-      <a href="tel:7603031827" class="nav-cta">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        (760) 303-1827
-      </a>
     </div>
     <button class="menu-toggle" id="menuToggle" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -530,7 +525,7 @@ h1, h2, h3, h4, h5, h6 {
           Get a Free Quote
         </a>
         <a href="tel:7603031827" class="btn btn-outline">
-          Call Now
+          Give Us a Call
         </a>
       </div>
     </div>
@@ -538,61 +533,121 @@ h1, h2, h3, h4, h5, h6 {
 </section>
 
 <!-- SERVICES -->
-<section class="services" id="services">
+<section class="reviews" id="reviews">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-label">What We Do</span>
-      <h2>Services Built for Desert Yards</h2>
-      <p>We keep Ridgecrest properties looking sharp — so you don't have to.</p>
+      <h2>Reviews From Your Neighbors</h2>
+      <p>We're grateful for every customer who trusts us with their yard.</p>
     </div>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="6" width="20" height="12" rx="2"/>
-            <path d="M12 12h.01"/>
-            <path d="M2 12h2"/>
-            <path d="M20 12h2"/>
-            <path d="M6 18v2"/>
-            <path d="M18 18v2"/>
-          </svg>
-        </div>
-        <h3>Lawn Mowing</h3>
-        <p>Clean, even cuts with professional-grade equipment. We adjust height for the season and your turf type.</p>
+  </div>
+  <div class="reviews-track-wrapper">
+    <div class="reviews-track" id="reviewsTrack">
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"We mow is phenomenal! All around excellent from the quoting, to being on time and getting the job done and leaving behind no signs they were there! Couldn't be happier with the quality of work"</p>
+        <div class="review-author"><div class="review-avatar">TB</div><div><div class="review-name">Tyler Boutte</div><div class="review-source">Google Review</div></div></div>
       </div>
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-            <path d="M2 17l10 5 10-5"/>
-            <path d="M2 12l10 5 10-5"/>
-          </svg>
-        </div>
-        <h3>Edging</h3>
-        <p>Crisp, defined lines along sidewalks, driveways, and flower beds that make your whole yard pop.</p>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"Thomas came out and made my yard look great. We just moved in and it needed some work. He was very professional and hard working. Easy payment online. I recommend his company."</p>
+        <div class="review-author"><div class="review-avatar">CB</div><div><div class="review-name">Curtis Boutte</div><div class="review-source">Google Review</div></div></div>
       </div>
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3c-1.2 0-2.4.6-3 1.7A3.6 3.6 0 0 0 4.6 9c-1 .6-1.7 1.8-1.7 3s.7 2.4 1.7 3c-.3 1.5.2 3 1.5 3.8a3.6 3.6 0 0 0 4.9 1.5c.6 1 1.8 1.7 3 1.7s2.4-.6 3-1.7a3.6 3.6 0 0 0 4.4-1.5c1.2-.8 1.7-2.3 1.5-3.8 1-.6 1.7-1.8 1.7-3s-.7-2.4-1.7-3c.3-1.5-.2-3-1.5-3.8A3.6 3.6 0 0 0 15 4.7c-.6-1-1.8-1.7-3-1.7z"/>
-            <path d="m9 12 2 2 4-4"/>
-          </svg>
-        </div>
-        <h3>Shrub Trimming</h3>
-        <p>Neat, shaped hedges and bushes that keep your property looking maintained and well-cared-for.</p>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"We-Mow has done some work for me and I was pleased. Hard working, honest man with fair prices. The quality of the work, craftsmanship, and execution to whatever work you have lined out for him is well deserving of praise."</p>
+        <div class="review-author"><div class="review-avatar">CC</div><div><div class="review-name">Carlos Carrillo</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"My backyard ended up better than I imagined it would. The work was done quickly and beautifully. Thomas, your hard work is greatly appreciated."</p>
+        <div class="review-author"><div class="review-avatar">H</div><div><div class="review-name">Harley</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"Tom did an amazing job and then some! Professional efficient and high quality! Made my wife's and i's life so easy!"</p>
+        <div class="review-author"><div class="review-avatar">TB</div><div><div class="review-name">Trevor Blanton</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"Thomas is very honest, reliable and thorough!! Does excellent work!! You will not be disappointed!!!"</p>
+        <div class="review-author"><div class="review-avatar">RL</div><div><div class="review-name">Rachelle Lewis</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"We have tried multiple local landscaping companies and glad to report we finally found the one we been looking for. No one has shown the work ethic, professionalism and just good hard honest work as Thomas. Thank you so much for giving us peace of mind knowing we don't have to worry about our yard! Don't hesitate to reach out to the We-Mow team!"</p>
+        <div class="review-author"><div class="review-avatar">CW</div><div><div class="review-name">Chris Walent</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"Tom is a completely down to Earth guy. Would definitely recommend him to anyone that wants to do business with and support a local business."</p>
+        <div class="review-author"><div class="review-avatar">DP</div><div><div class="review-name">Dante Peterson</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"Honest, reliable and punctual. Speedy but efficient!!"</p>
+        <div class="review-author"><div class="review-avatar">AL</div><div><div class="review-name">Aubrey Lewis</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"Wow, I am blown away by the absolute perfection from start to finish. Tom did an immaculate job and will only be using him from here on. Thank you, Tom!!"</p>
+        <div class="review-author"><div class="review-avatar">DF</div><div><div class="review-name">D F</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <!-- Duplicate for infinite scroll -->
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"We mow is phenomenal! All around excellent from the quoting, to being on time and getting the job done and leaving behind no signs they were there! Couldn't be happier with the quality of work"</p>
+        <div class="review-author"><div class="review-avatar">TB</div><div><div class="review-name">Tyler Boutte</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"Thomas came out and made my yard look great. We just moved in and it needed some work. He was very professional and hard working. Easy payment online. I recommend his company."</p>
+        <div class="review-author"><div class="review-avatar">CB</div><div><div class="review-name">Curtis Boutte</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"We-Mow has done some work for me and I was pleased. Hard working, honest man with fair prices. The quality of the work, craftsmanship, and execution to whatever work you have lined out for him is well deserving of praise."</p>
+        <div class="review-author"><div class="review-avatar">CC</div><div><div class="review-name">Carlos Carrillo</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"My backyard ended up better than I imagined it would. The work was done quickly and beautifully. Thomas, your hard work is greatly appreciated."</p>
+        <div class="review-author"><div class="review-avatar">H</div><div><div class="review-name">Harley</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"Tom did an amazing job and then some! Professional efficient and high quality! Made my wife's and i's life so easy!"</p>
+        <div class="review-author"><div class="review-avatar">TB</div><div><div class="review-name">Trevor Blanton</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"Thomas is very honest, reliable and thorough!! Does excellent work!! You will not be disappointed!!!"</p>
+        <div class="review-author"><div class="review-avatar">RL</div><div><div class="review-name">Rachelle Lewis</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"We have tried multiple local landscaping companies and glad to report we finally found the one we been looking for. No one has shown the work ethic, professionalism and just good hard honest work as Thomas. Thank you so much for giving us peace of mind knowing we don't have to worry about our yard! Don't hesitate to reach out to the We-Mow team!"</p>
+        <div class="review-author"><div class="review-avatar">CW</div><div><div class="review-name">Chris Walent</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"Tom is a completely down to Earth guy. Would definitely recommend him to anyone that wants to do business with and support a local business."</p>
+        <div class="review-author"><div class="review-avatar">DP</div><div><div class="review-name">Dante Peterson</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"Honest, reliable and punctual. Speedy but efficient!!"</p>
+        <div class="review-author"><div class="review-avatar">AL</div><div><div class="review-name">Aubrey Lewis</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>"Wow, I am blown away by the absolute perfection from start to finish. Tom did an immaculate job and will only be using him from here on. Thank you, Tom!!"</p>
+        <div class="review-author"><div class="review-avatar">DF</div><div><div class="review-name">D F</div><div class="review-source">Google Review</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
 <section class="gallery" id="gallery">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">Our Work</span>
-      <h2>Before &amp; After Results</h2>
-      <p>Real results from Ridgecrest properties. Your yard could be next.</p>
-    </div>
     <div class="gallery-grid reveal">
       <div class="g-item">
         <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=800&q=80" alt="Freshly mowed lawn">
@@ -610,73 +665,63 @@ h1, h2, h3, h4, h5, h6 {
         <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Yard care results">
       </div>
     </div>
-  </div>
 </section>
 
-<!-- REVIEWS -->
-<section class="reviews" id="reviews">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">Reviews</span>
-      <h2>What Ridgecrest Says</h2>
-      <p>Don't take our word for it — hear from your neighbors.</p>
+<section class="services" id="services">
+    <div class="section-header reveal" style="margin-bottom: 40px;">
+      <h2>Services We Offer</h2>
+      <p>Everything your yard needs to look its best, all year round.</p>
     </div>
-  </div>
-  <div class="reviews-track-wrapper">
-    <div class="reviews-track" id="reviewsTrack">
-      <div class="review-card">
-        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p>"Thomas came out the same week I called. Yard looks better than it has in years. Will definitely be using WeMow going forward."</p>
-        <div class="review-author"><div class="review-avatar">MR</div><div><div class="review-name">Mike R.</div><div class="review-source">Google Review</div></div></div>
+    <div class="services-grid">
+      <div class="service-item reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22V8"/>
+            <path d="M5 12H2a10 10 0 0 0 10-10 10 10 0 0 0 10 10h-3"/>
+            <path d="M8 22h8"/>
+            <path d="M7 15c1.5 0 3-1 3-3"/>
+            <path d="M17 15c-1.5 0-3-1-3-3"/>
+          </svg>
+        </div>
+        <h3>Landscaping</h3>
+        <p>Full-service landscaping including design, planting, mulching, and seasonal cleanups to transform your yard.</p>
       </div>
-      <div class="review-card">
-        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p>"Super reliable and always does a great job. My hedges haven't looked this good since we moved in. Highly recommend!"</p>
-        <div class="review-author"><div class="review-avatar">SL</div><div><div class="review-name">Sarah L.</div><div class="review-source">Google Review</div></div></div>
+      <div class="service-item reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="6" width="20" height="12" rx="2"/>
+            <path d="M12 12h.01"/>
+            <path d="M2 12h2"/>
+            <path d="M20 12h2"/>
+            <path d="M6 18v2"/>
+            <path d="M18 18v2"/>
+          </svg>
+        </div>
+        <h3>Lawn Mowing</h3>
+        <p>Clean, even cuts with professional-grade equipment. We adjust height for the season and your turf type.</p>
       </div>
-      <div class="review-card">
-        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p>"Affordable, professional, and local. Thomas takes pride in his work and it shows. Best lawn service in Ridgecrest, hands down."</p>
-        <div class="review-author"><div class="review-avatar">JD</div><div><div class="review-name">James D.</div><div class="review-source">Facebook Review</div></div></div>
+      <div class="service-item reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Edging</h3>
+        <p>Crisp, defined lines along sidewalks, driveways, and flower beds that make your whole yard pop.</p>
       </div>
-      <div class="review-card">
-        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p>"We're on the base and it's hard to find reliable lawn care out here. Thomas is always on time and does quality work. Really glad we found WeMow!"</p>
-        <div class="review-author"><div class="review-avatar">KT</div><div><div class="review-name">Karen T.</div><div class="review-source">Google Review</div></div></div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p>"Had them come do a one-time cleanup before a family BBQ and it looked amazing. Now we have them come every two weeks. Fair pricing too."</p>
-        <div class="review-author"><div class="review-avatar">DP</div><div><div class="review-name">David P.</div><div class="review-source">Nextdoor</div></div></div>
-      </div>
-      <!-- Duplicate for infinite scroll -->
-      <div class="review-card">
-        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p>"Thomas came out the same week I called. Yard looks better than it has in years. Will definitely be using WeMow going forward."</p>
-        <div class="review-author"><div class="review-avatar">MR</div><div><div class="review-name">Mike R.</div><div class="review-source">Google Review</div></div></div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p>"Super reliable and always does a great job. My hedges haven't looked this good since we moved in. Highly recommend!"</p>
-        <div class="review-author"><div class="review-avatar">SL</div><div><div class="review-name">Sarah L.</div><div class="review-source">Google Review</div></div></div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p>"Affordable, professional, and local. Thomas takes pride in his work and it shows. Best lawn service in Ridgecrest, hands down."</p>
-        <div class="review-author"><div class="review-avatar">JD</div><div><div class="review-name">James D.</div><div class="review-source">Facebook Review</div></div></div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p>"We're on the base and it's hard to find reliable lawn care out here. Thomas is always on time and does quality work. Really glad we found WeMow!"</p>
-        <div class="review-author"><div class="review-avatar">KT</div><div><div class="review-name">Karen T.</div><div class="review-source">Google Review</div></div></div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <p>"Had them come do a one-time cleanup before a family BBQ and it looked amazing. Now we have them come every two weeks. Fair pricing too."</p>
-        <div class="review-author"><div class="review-avatar">DP</div><div><div class="review-name">David P.</div><div class="review-source">Nextdoor</div></div></div>
+      <div class="service-item reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3c-1.2 0-2.4.6-3 1.7A3.6 3.6 0 0 0 4.6 9c-1 .6-1.7 1.8-1.7 3s.7 2.4 1.7 3c-.3 1.5.2 3 1.5 3.8a3.6 3.6 0 0 0 4.9 1.5c.6 1 1.8 1.7 3 1.7s2.4-.6 3-1.7a3.6 3.6 0 0 0 4.4-1.5c1.2-.8 1.7-2.3 1.5-3.8 1-.6 1.7-1.8 1.7-3s-.7-2.4-1.7-3c.3-1.5-.2-3-1.5-3.8A3.6 3.6 0 0 0 15 4.7c-.6-1-1.8-1.7-3-1.7z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+        </div>
+        <h3>Shrub Trimming</h3>
+        <p>Neat, shaped hedges and bushes that keep your property looking maintained and well-cared-for.</p>
       </div>
     </div>
-  </div>
 </section>
 
 <!-- ABOUT -->

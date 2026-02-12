@@ -1,4 +1,12 @@
 export default async function handler(req, res) {
+  // Handle CORS preflight
+  if (req.method === 'OPTIONS') {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    return res.status(200).end();
+  }
+
   // Only allow POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -17,6 +25,8 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Name, phone, and address are required.' });
     }
 
+    console.log('Processing quote for:', name);
+
     // Run all three in parallel
     const results = await Promise.allSettled([
       createAirtableRecord({ name, phone, address, service, urgency, details }),
@@ -26,28 +36,15 @@ export default async function handler(req, res) {
 
     // Check results
     const [airtable, sms, email] = results;
-    const errors = [];
+    const summary = {
+      airtable: airtable.status === 'fulfilled' ? 'OK' : `FAIL: ${airtable.reason}`,
+      sms: sms.status === 'fulfilled' ? 'OK' : `FAIL: ${sms.reason}`,
+      email: email.status === 'fulfilled' ? 'OK' : `FAIL: ${email.reason}`,
+    };
 
-    if (airtable.status === 'rejected') {
-      console.error('Airtable error:', airtable.reason);
-      errors.push('airtable');
-    }
-    if (sms.status === 'rejected') {
-      console.error('SMS error:', sms.reason);
-      errors.push('sms');
-    }
-    if (email.status === 'rejected') {
-      console.error('Email error:', email.reason);
-      errors.push('email');
-    }
+    console.log('Results:', JSON.stringify(summary));
 
-    // Even if notifications fail, the quote was received — don't tell the customer it failed
-    // Just log the errors for debugging
-    if (errors.length > 0) {
-      console.warn('Some notifications failed:', errors.join(', '));
-    }
-
-    return res.status(200).json({ success: true });
+    return res.status(200).json({ success: true, _debug: summary });
   } catch (err) {
     console.error('Quote handler error:', err);
     return res.status(500).json({ error: 'Something went wrong. Please call us instead.' });
@@ -56,31 +53,27 @@ export default async function handler(req, res) {
 
 // ─── AIRTABLE ───
 async function createAirtableRecord(data) {
-  const resp = await fetch(
-    `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE_ID}`,
-    {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        records: [
-          {
-            fields: {
-              Name: data.name,
-              Phone: data.phone,
-              Address: data.address,
-              Service: data.service || undefined,
-              Urgency: data.urgency || undefined,
-              Details: data.details || '',
-              Status: 'New',
-            },
-          },
-        ],
-      }),
-    }
-  );
+  const url = `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE_ID}`;
+
+  // Build fields, omitting empty single-select values
+  const fields = {
+    Name: data.name,
+    Phone: data.phone,
+    Address: data.address,
+    Details: data.details || '',
+    Status: 'New',
+  };
+  if (data.service) fields.Service = data.service;
+  if (data.urgency) fields.Urgency = data.urgency;
+
+  const resp = await fetch(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ records: [{ fields }] }),
+  });
 
   if (!resp.ok) {
     const err = await resp.text();
@@ -93,7 +86,7 @@ async function createAirtableRecord(data) {
 // ─── SMS VIA TEXTBELT ───
 async function sendSMS(data) {
   const message = [
-    `\ud83c\udf3f New WeMow760 Quote`,
+    `🌿 New WeMow760 Quote`,
     ``,
     `Name: ${data.name}`,
     `Phone: ${data.phone}`,

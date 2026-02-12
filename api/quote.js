@@ -25,26 +25,28 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Name, phone, and address are required.' });
     }
 
-    console.log('Processing quote for:', name);
+    const formData = { name, phone, address, service, urgency, details };
 
-    // Run all three in parallel
+    // Step 1: Create Airtable record first (so we get the record ID for the email link)
+    let airtableRecordId = null;
+    try {
+      const airtableResult = await createAirtableRecord(formData);
+      airtableRecordId = airtableResult.records?.[0]?.id || null;
+    } catch (err) {
+      console.error('Airtable error:', err);
+    }
+
+    // Step 2: Send SMS and email in parallel
     const results = await Promise.allSettled([
-      createAirtableRecord({ name, phone, address, service, urgency, details }),
-      sendSMS({ name, phone, address, service, urgency, details }),
-      sendEmail({ name, phone, address, service, urgency, details }),
+      sendSMS(formData),
+      sendEmail(formData, airtableRecordId),
     ]);
 
-    // Check results
-    const [airtable, sms, email] = results;
-    const summary = {
-      airtable: airtable.status === 'fulfilled' ? 'OK' : `FAIL: ${airtable.reason}`,
-      sms: sms.status === 'fulfilled' ? 'OK' : `FAIL: ${sms.reason}`,
-      email: email.status === 'fulfilled' ? 'OK' : `FAIL: ${email.reason}`,
-    };
+    const [sms, email] = results;
+    if (sms.status === 'rejected') console.error('SMS error:', sms.reason);
+    if (email.status === 'rejected') console.error('Email error:', email.reason);
 
-    console.log('Results:', JSON.stringify(summary));
-
-    return res.status(200).json({ success: true, _debug: summary });
+    return res.status(200).json({ success: true });
   } catch (err) {
     console.error('Quote handler error:', err);
     return res.status(500).json({ error: 'Something went wrong. Please call us instead.' });
@@ -86,7 +88,7 @@ async function createAirtableRecord(data) {
 // ─── SMS VIA TEXTBELT ───
 async function sendSMS(data) {
   const message = [
-    `🌿 New WeMow760 Quote`,
+    `🌿 New WeMow760 Quote Request`,
     ``,
     `Name: ${data.name}`,
     `Phone: ${data.phone}`,
@@ -122,12 +124,16 @@ async function sendSMS(data) {
 }
 
 // ─── EMAIL VIA RESEND ───
-async function sendEmail(data) {
+async function sendEmail(data, airtableRecordId) {
   const timestamp = new Date().toLocaleString('en-US', {
     timeZone: 'America/Los_Angeles',
     dateStyle: 'medium',
     timeStyle: 'short',
   });
+
+  const airtableUrl = airtableRecordId
+    ? `https://airtable.com/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE_ID}/${airtableRecordId}`
+    : `https://airtable.com/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE_ID}`;
 
   const html = `
     <div style="font-family: -apple-system, sans-serif; max-width: 500px;">
@@ -157,10 +163,13 @@ async function sendEmail(data) {
           <td style="padding: 10px 0; border-bottom: 1px solid #eee;">${data.urgency}</td>
         </tr>` : ''}
         ${data.details ? `<tr>
-          <td style="padding: 10px 0; font-weight: 600; vertical-align: top;">Details</td>
+          <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: 600; vertical-align: top;">Details</td>
           <td style="padding: 10px 0;">${data.details}</td>
         </tr>` : ''}
       </table>
+      <p style="margin-top: 20px;">
+        <a href="${airtableUrl}" style="display: inline-block; padding: 10px 20px; background: #00BF66; color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600;">View in Airtable</a>
+      </p>
     </div>
   `;
 
@@ -173,7 +182,7 @@ async function sendEmail(data) {
     body: JSON.stringify({
       from: 'WeMow760 <notifications@wemow760.com>',
       to: [process.env.NOTIFY_EMAIL],
-      subject: `New Quote — ${data.name}${data.service ? ` (${data.service})` : ''}`,
+      subject: `New Quote Request — ${data.name}${data.service ? ` (${data.service})` : ''}`,
       html,
     }),
   });

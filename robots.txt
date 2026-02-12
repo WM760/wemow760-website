@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wemow760.com/sitemap.xml

@@ -892,12 +892,47 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal();
 });
 
-// Form handler (placeholder)
+// Form handler
 function handleSubmit(e) {
   e.preventDefault();
-  alert('Quote request received! Thomas will get back to you within 24 hours.');
-  closeModal();
-  e.target.reset();
+  const btn = e.target.querySelector('.form-submit');
+  const originalText = btn.textContent;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+
+  const data = {
+    name: document.getElementById('name').value.trim(),
+    phone: document.getElementById('phone').value.trim(),
+    address: document.getElementById('address').value.trim(),
+    service: document.getElementById('service').value,
+    urgency: document.getElementById('urgency').value,
+    details: document.getElementById('details').value.trim(),
+  };
+
+  fetch('/api/quote', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+    .then(resp => {
+      if (!resp.ok) throw new Error('Request failed');
+      btn.textContent = '\u2713 Quote Request Sent!';
+      btn.style.background = '#00BF66';
+      setTimeout(() => {
+        closeModal();
+        e.target.reset();
+        btn.textContent = originalText;
+        btn.disabled = false;
+        btn.style.opacity = '1';
+      }, 2000);
+    })
+    .catch(() => {
+      btn.textContent = originalText;
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      alert('Something went wrong. Please try again or call us at (760) 303-1827.');
+    });
 }
 
 // Scroll reveal
